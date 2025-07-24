@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmoan050s8tn"]
+
+[ext_resource type="Script" path="res://collectable.gd" id="1_v7t8e"]
+
+[node name="Collectable" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_v7t8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

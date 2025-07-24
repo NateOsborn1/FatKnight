@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://duqkxsijpetq5"]
+
+[ext_resource type="PackedScene" uid="uid://8me2gadrjg3e" path="res://scenes/ui/inventory/hotbar_slot.tscn" id="1_5a5ka"]
+[ext_resource type="Script" path="res://scenes/ui/inventory/hotbar.gd" id="1_jlx7e"]
+[ext_resource type="Texture2D" uid="uid://vgwki0y2cy4n" path="res://Assets/inventory/select.png" id="3_wppvw"]
+[ext_resource type="Texture2D" uid="uid://kw4aq4u1xgjw" path="res://Assets/inventory/select1.png" id="4_by44w"]
+[ext_resource type="Texture2D" uid="uid://cd84bnpgcby22" path="res://Assets/inventory/select32x32.png" id="5_nhxf5"]
+
+[node name="Hotbar" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 116.0
+offset_bottom = 20.0
+script = ExtResource("1_jlx7e")
+
+[node name="Container" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 20.0
+
+[node name="Hotbar" parent="Container" instance=ExtResource("1_5a5ka")]
+layout_mode = 2
+
+[node name="Hotbar2" parent="Container" instance=ExtResource("1_5a5ka")]
+layout_mode = 2
+
+[node name="Hotbar3" parent="Container" instance=ExtResource("1_5a5ka")]
+layout_mode = 2
+
+[node name="Hotbar4" parent="Container" instance=ExtResource("1_5a5ka")]
+layout_mode = 2
+
+[node name="Hotbar5" parent="Container" instance=ExtResource("1_5a5ka")]
+layout_mode = 2
+
+[node name="Old_Selector" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_wppvw")
+centered = false
+offset = Vector2(-2.15, -2.15)
+metadata/NOT_IN_USE = ""
+
+[node name="Selector" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+scale = Vector2(0.65, 0.615549)
+texture = ExtResource("4_by44w")
+centered = false
+offset = Vector2(-5.25, -5.24)
+
+[node name="Selector2" type="Sprite2D" parent="."]
+position = Vector2(0.31, 0.45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_nhxf5")
+centered = false
+offset = Vector2(-5.25, -5.24)

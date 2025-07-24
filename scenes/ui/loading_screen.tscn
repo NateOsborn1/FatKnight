@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://kv38xdvpfvmk"]
+
+[ext_resource type="Script" path="res://scenes/ui/loading_screen.gd" id="1_muo1b"]
+
+[sub_resource type="Animation" id="Animation_d6fd6"]
+resource_name = "fade_from_black"
+
+[sub_resource type="Animation" id="Animation_relji"]
+resource_name = "fade_to_black"
+
+[sub_resource type="Animation" id="Animation_ebw8u"]
+resource_name = "wipe_from_right"
+
+[sub_resource type="Animation" id="Animation_c4w6w"]
+resource_name = "wipe_to_right"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu3qp"]
+_data = {
+"fade_from_black": SubResource("Animation_d6fd6"),
+"fade_to_black": SubResource("Animation_relji"),
+"wipe_from_right": SubResource("Animation_ebw8u"),
+"wipe_to_right": SubResource("Animation_c4w6w")
+}
+
+[node name="Loading Screen" type="CanvasLayer"]
+script = ExtResource("1_muo1b")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gu3qp")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

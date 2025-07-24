@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://f5ma5uo8568g"]
+
+[ext_resource type="Texture2D" uid="uid://cwhq1d1hpbpwh" path="res://Assets/Art/FX/Sparkle.png" id="1_q2a43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7neqx"]
+atlas = ExtResource("1_q2a43")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_737nb"]
+atlas = ExtResource("1_q2a43")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym8xy"]
+atlas = ExtResource("1_q2a43")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n44hf"]
+atlas = ExtResource("1_q2a43")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxsrj"]
+atlas = ExtResource("1_q2a43")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chmal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7neqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_737nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym8xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n44hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxsrj")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_yjjeq"]
+resource_name = "sparkle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["sparkle"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hlvuh"]
+_data = {
+"sparkle": SubResource("Animation_yjjeq")
+}
+
+[node name="Vanish" type="Node2D"]
+editor_description = "moved y -3 
+"
+position = Vector2(0, -3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_chmal")
+animation = &"sparkle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_hlvuh")
+}
+autoplay = "sparkle"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccs40yklqh3dm"]
+
+[ext_resource type="PackedScene" uid="uid://cpmoan050s8tn" path="res://scenes/collectable/collectable.tscn" id="1_0nwt1"]
+[ext_resource type="Resource" uid="uid://sj2b4js4icrb" path="res://scenes/collectable/frig_collectable.tres" id="2_a3iuo"]
+[ext_resource type="Texture2D" uid="uid://dkwles13n50tk" path="res://Assets/Art/Entities/Frig/Fridge open close.png" id="2_n20i6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5vx3"]
+size = Vector2(8, 18)
+
+[node name="Frig collectable" instance=ExtResource("1_0nwt1")]
+itemRes = ExtResource("2_a3iuo")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_q5vx3")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-4, 0)
+texture = ExtResource("2_n20i6")

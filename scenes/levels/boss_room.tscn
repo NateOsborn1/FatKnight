@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2c8ntrlrcfpo"]
+
+[ext_resource type="PackedScene" uid="uid://dcnui0152qp47" path="res://scenes/entities/nitefsm.tscn" id="1_nkt15"]
+[ext_resource type="PackedScene" uid="uid://do8uvy17b1728" path="res://scenes/entities/crow_enemy.tscn" id="3_7d7m2"]
+[ext_resource type="Texture2D" uid="uid://bs4oanrcdcmq5" path="res://icon.svg" id="3_w80ht"]
+[ext_resource type="Texture2D" uid="uid://wu28rhd6t48q" path="res://Assets/Art/Background/Brick_Wall dark.png" id="4_eueex"]
+[ext_resource type="Texture2D" uid="uid://d1undmeeyr176" path="res://Assets/Art/Background/Brick_Wall(1).png" id="5_vunx3"]
+[ext_resource type="Texture2D" uid="uid://stg3wnpcrlqj" path="res://Assets/Art/Background/Fog_Swamp.png" id="6_ysy5w"]
+[ext_resource type="Texture2D" uid="uid://cwykgtssam5oi" path="res://Assets/Art/FX/Gas.png" id="7_56wun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uau0q"]
+size = Vector2(1457, 20)
+
+[node name="Boss room" type="Node2D"]
+
+[node name="Nitefsm" parent="." instance=ExtResource("1_nkt15")]
+position = Vector2(448, 532)
+
+[node name="Crow Enemy" parent="." instance=ExtResource("3_7d7m2")]
+position = Vector2(231, 523)
+collision_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(293, 561)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(204.5, 0)
+shape = SubResource("RectangleShape2D_uau0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(203, 54)
+scale = Vector2(11.3906, 1)
+texture = ExtResource("3_w80ht")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-118, -65)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="Clouds Wall" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+visible = false
+position = Vector2(-111, -107)
+motion_scale = Vector2(0.95, 1)
+motion_mirroring = Vector2(700, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Clouds Wall"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = 223.0
+offset_right = 688.0
+offset_bottom = 547.0
+texture = ExtResource("4_eueex")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Clouds Wall3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+visible = false
+position = Vector2(-111, -427)
+motion_scale = Vector2(0.95, 1)
+motion_mirroring = Vector2(700, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Clouds Wall3"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = 223.0
+offset_right = 688.0
+offset_bottom = 547.0
+texture = ExtResource("5_vunx3")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Swamp" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+position = Vector2(-137, 103)
+motion_scale = Vector2(0.95, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Swamp"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = 223.0
+offset_right = 688.0
+offset_bottom = 547.0
+texture = ExtResource("6_ysy5w")
+expand_mode = 1
+stretch_mode = 1
+flip_h = true
+
+[node name="Swamp2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+position = Vector2(528, 103)
+motion_scale = Vector2(0.95, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Swamp2"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = 223.0
+offset_right = 688.0
+offset_bottom = 547.0
+texture = ExtResource("6_ysy5w")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Foilage Gas" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+visible = false
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(700, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Foilage Gas"]
+visible = false
+offset_left = -13.0
+offset_top = 262.0
+offset_right = 687.0
+offset_bottom = 586.0
+texture = ExtResource("7_56wun")
+expand_mode = 1
+stretch_mode = 1

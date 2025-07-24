@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8mdhc7onqxy"]
+
+[ext_resource type="Script" path="res://collectable.gd" id="1_w30n4"]
+[ext_resource type="Resource" uid="uid://ds20hygolsuc4" path="res://scenes/ui/inventory/items/goldsack.tres" id="2_d1p7l"]
+[ext_resource type="Texture2D" uid="uid://biv6sh4ey1wwc" path="res://Assets/Art/items/GoldSack.png" id="3_3yir2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smvwf"]
+radius = 8.0
+
+[node name="GoldSack" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_w30n4")
+itemRes = ExtResource("2_d1p7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.28571)
+shape = SubResource("CircleShape2D_smvwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3.3)
+texture = ExtResource("3_3yir2")

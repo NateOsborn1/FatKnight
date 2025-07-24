@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6sgmtn28clna"]
+
+[ext_resource type="Script" path="res://scenes/entities/spikes.gd" id="1_f7ol2"]
+[ext_resource type="Texture2D" uid="uid://djkondlu2nsm8" path="res://Assets/Art/Entities/Obstacles/terrain/Spikes.png" id="1_j4h2a"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_f7ol2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 5
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(5, 4, 8, 7, 8, 8, -8, 8, -8, 7, -4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_j4h2a")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

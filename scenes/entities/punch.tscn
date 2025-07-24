@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b42a3gwwdbgmk"]
+
+[ext_resource type="Script" path="res://scenes/entities/Punch.gd" id="1_f8k3w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_simpr"]
+radius = 6.0
+
+[node name="Punch" type="Area2D"]
+position = Vector2(0, 3)
+collision_mask = 40
+monitoring = false
+script = ExtResource("1_f8k3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -4)
+shape = SubResource("CapsuleShape2D_simpr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

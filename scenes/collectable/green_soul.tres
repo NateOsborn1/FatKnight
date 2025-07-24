@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bnh1hodrd2aa0"]
+
+[ext_resource type="Script" path="res://scenes/ui/inventory/inventory_item.gd" id="1_t2m4h"]
+[ext_resource type="Texture2D" uid="uid://bykeqdy7s2wdf" path="res://Assets/Art/items/Soul img.png" id="2_4w0nk"]
+
+[resource]
+script = ExtResource("1_t2m4h")
+name = "Green Soul"
+texture = ExtResource("2_4w0nk")
+stackSize = 99
+maxAmount = 99

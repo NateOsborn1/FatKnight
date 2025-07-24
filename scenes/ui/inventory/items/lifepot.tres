@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealthItem" load_steps=3 format=3 uid="uid://b2oohc3j5wtbo"]
+
+[ext_resource type="Script" path="res://scenes/ui/inventory/items/health_item.gd" id="1_078xv"]
+[ext_resource type="Texture2D" uid="uid://dqx4r5raf0vk5" path="res://Assets/Art/items/Lifepot1.png" id="2_5cu1p"]
+
+[resource]
+script = ExtResource("1_078xv")
+health_increase = 1
+name = "lifepot"
+texture = ExtResource("2_5cu1p")
+maxAmount = 3

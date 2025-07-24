@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://csb12li44bbwh"]
+
+[ext_resource type="Script" path="res://scenes/collectable/special_sword1.gd" id="1_qu6s7"]
+
+[node name="special_sword1" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_qu6s7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

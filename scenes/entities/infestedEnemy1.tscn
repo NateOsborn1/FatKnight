@@ -1,0 +1,271 @@
+[gd_scene load_steps=15 format=3 uid="uid://ccwa82a66cbxn"]
+
+[ext_resource type="Script" path="res://scenes/entities/damage_handler.gd" id="1_6mq82"]
+[ext_resource type="Script" path="res://scenes/entities/infestedEnemy1.gd" id="1_kbemm"]
+[ext_resource type="Texture2D" uid="uid://circojfrqfhp2" path="res://Assets/Art/UI/HP and SP/Hungerbar.png" id="1_mowhy"]
+[ext_resource type="PackedScene" uid="uid://byiw0v1iii6tf" path="res://scenes/ui/floating_number.tscn" id="2_0yme4"]
+[ext_resource type="Texture2D" uid="uid://cvfc5lwhyy2yv" path="res://Assets/Art/Entities/testEnemy/infested1body.png" id="3_muoci"]
+[ext_resource type="Texture2D" uid="uid://ol17iuuttoej" path="res://Assets/Art/Entities/testEnemy/infested1head.png" id="4_8mpdp"]
+[ext_resource type="Texture2D" uid="uid://cpt4c61n4wrrh" path="res://Assets/Art/items/specialSword.png" id="5_xsxso"]
+[ext_resource type="FontFile" uid="uid://bv2yue6oymbtp" path="res://Assets/fonts/Early GameBoy.ttf" id="7_4g1tm"]
+[ext_resource type="Texture2D" uid="uid://be768wisnt85t" path="res://Assets/Art/Entities/Fatnite/Fatnite0.png" id="9_0ffi5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d06p6"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_f1jfy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ggr85"]
+resource_name = "effective"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Effective"]
+}
+
+[sub_resource type="Animation" id="Animation_bxkdu"]
+resource_name = "resistant"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Resistant"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 0, 1), Color(1, 1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfr4c"]
+_data = {
+"RESET": SubResource("Animation_f1jfy"),
+"effective": SubResource("Animation_ggr85"),
+"resistant": SubResource("Animation_bxkdu")
+}
+
+[node name="infestedEnemy1" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_kbemm")
+
+[node name="healthBar" type="TextureProgressBar" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.5
+offset_top = -25.0
+offset_right = 13.5
+offset_bottom = -3.0
+grow_horizontal = 2
+pivot_offset = Vector2(36, 0)
+max_value = 10.0
+value = 1.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("1_mowhy")
+texture_progress = ExtResource("1_mowhy")
+tint_under = Color(0.4, 0.129412, 0.129412, 1)
+tint_over = Color(0.568627, 0.121569, 0, 1)
+
+[node name="DamageHandler" type="Node2D" parent="." node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_6mq82")
+max_health = 10
+animation_player = NodePath("../AnimationPlayer")
+type_resistance = 2
+type_effective = 2
+floating_number = ExtResource("2_0yme4")
+
+[node name="HealthHandler" type="Node2D" parent="."]
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("3_muoci")
+region_enabled = true
+region_rect = Rect2(10, 0, 21, 30)
+
+[node name="head" type="Sprite2D" parent="body"]
+z_index = -1
+position = Vector2(0, -8)
+texture = ExtResource("4_8mpdp")
+offset = Vector2(1, -0.5)
+region_enabled = true
+region_rect = Rect2(17, 2, 9, 9)
+
+[node name="sword" type="Sprite2D" parent="body"]
+z_index = -1
+texture = ExtResource("5_xsxso")
+offset = Vector2(-8.5, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_d06p6")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 10.0
+offset_right = 36.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(36, 11.5)
+text = "Effective"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xfr4c")
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 64.0
+offset_right = 200.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_4g1tm")
+theme_override_font_sizes/font_size = 24
+value = 100.0
+
+[node name="Label" type="Label" parent="UI/ProgressBar"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = -8.0
+offset_top = -37.0
+offset_right = 412.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("7_4g1tm")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_4g1tm")
+theme_override_font_sizes/font_size = 40
+text = "BOSS SLAIN"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_0ffi5")
+centered = false
+offset = Vector2(-8, -13)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 25)
+
+[node name="sword2" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(5, -1)
+texture = ExtResource("5_xsxso")
+offset = Vector2(-8.5, 4)
