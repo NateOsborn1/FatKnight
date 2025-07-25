@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4hqwaqqpbwya"]
 
 [ext_resource type="Theme" uid="uid://3mwqdmah8pd6" path="res://Assets/themes/default_theme.tres" id="1_m64fh"]
-[ext_resource type="Script" path="res://scenes/ui/health_changed_label.gd" id="2_6yre6"]
+[ext_resource type="Script" uid="uid://cqnnkdtrfxj55" path="res://scenes/ui/health_changed_label.gd" id="2_6yre6"]
 
 [node name="HealthChangedLabel" type="Label"]
 anchors_preset = 15

@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://vs6j3vuwuki1"]
 
 [ext_resource type="Theme" uid="uid://3mwqdmah8pd6" path="res://Assets/themes/default_theme.tres" id="1_ii6w6"]
-[ext_resource type="Script" path="res://scenes/ui/menus/main_menu.gd" id="2_ooob7"]
+[ext_resource type="Script" uid="uid://d2ow020pptxya" path="res://scenes/ui/menus/main_menu.gd" id="2_ooob7"]
 [ext_resource type="Texture2D" uid="uid://dl3hsnnqrrcnd" path="res://Assets/Art/Entities/Fatnite/JumpNite-ezgif.com-gif-to-sprite-converter.png" id="3_12bas"]
 [ext_resource type="Texture2D" uid="uid://c3ylf7xhssdx7" path="res://Assets/Art/Entities/Fatnite/Idle_Flat1-ezgif.com-gif-to-sprite-converter.png" id="4_p3o8w"]
 [ext_resource type="Texture2D" uid="uid://dkwles13n50tk" path="res://Assets/Art/Entities/Frig/Fridge open close.png" id="5_kouuj"]
@@ -281,29 +281,28 @@ scale = Vector2(7.36001, 7.36001)
 position = Vector2(5.16303, 4.32064)
 shape = SubResource("RectangleShape2D_fc0r5")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="CanvasLayer/Control"]
-position = Vector2(860, -716)
+[node name="Control2" type="Control" parent="CanvasLayer"]
+visible = false
+z_index = -10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="fatnite menu" type="RigidBody2D" parent="CanvasLayer/Control2"]
+position = Vector2(242, -63)
 rotation = 0.0174533
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/RigidBody2D"]
-position = Vector2(-32.25, 1.67648)
-scale = Vector2(7.85294, 7.85294)
-texture = ExtResource("5_kouuj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Control/RigidBody2D"]
-position = Vector2(-0.5, 1.10297)
-shape = SubResource("RectangleShape2D_pngq6")
-
-[node name="fatnite menu" type="RigidBody2D" parent="CanvasLayer/Control"]
-position = Vector2(241, -710)
-rotation = 0.0174533
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Control/fatnite menu"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Control2/fatnite menu"]
 position = Vector2(-0.519135, 0.00907135)
 rotation = -0.0174533
 shape = SubResource("RectangleShape2D_pngq6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/fatnite menu"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control2/fatnite menu"]
 position = Vector2(-0.999912, 0.0174541)
 rotation = -0.0174533
 scale = Vector2(4.75, 4.75)
@@ -311,6 +310,19 @@ sprite_frames = SubResource("SpriteFrames_exj8a")
 autoplay = "default"
 frame = 23
 frame_progress = 1.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CanvasLayer/Control2"]
+position = Vector2(861, -69)
+rotation = 0.0174533
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control2/RigidBody2D"]
+position = Vector2(-32.25, 1.67648)
+scale = Vector2(7.85294, 7.85294)
+texture = ExtResource("5_kouuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Control2/RigidBody2D"]
+position = Vector2(-0.5, 1.10297)
+shape = SubResource("RectangleShape2D_pngq6")
 
 [connection signal="start_game" from="." to="." method="_on_start_game"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVbox/StartGameButton" to="." method="_on_start_game_button_pressed"]

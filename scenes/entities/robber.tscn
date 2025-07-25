@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://dg23eqy8x7qpf"]
 
-[ext_resource type="Script" path="res://scenes/entities/robber.gd" id="1_opfg1"]
+[ext_resource type="Script" uid="uid://bc8h8jojq4nmv" path="res://scenes/entities/robber.gd" id="1_opfg1"]
 [ext_resource type="Texture2D" uid="uid://dmoa8ayhptlg2" path="res://Assets/Art/Entities/Robber/female1/hurt/Robberhurt-ezgif.com-gif-to-sprite-converter.png" id="2_u03o6"]
 [ext_resource type="Texture2D" uid="uid://cyb7oj574nu66" path="res://Assets/Art/Entities/Robber/female1/jump/Jump-ezgif.com-gif-to-sprite-converter.png" id="3_2t3b2"]
 [ext_resource type="Texture2D" uid="uid://3wy5op14txsx" path="res://Assets/Art/Entities/Robber/female1/run/Run2-ezgif.com-gif-to-sprite-converter.png" id="4_tdvhp"]
@@ -290,13 +290,13 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcvrx"]
 _data = {
-"RESET": SubResource("Animation_rglyt"),
-"hurt": SubResource("Animation_33ilt"),
-"idle": SubResource("Animation_ludxr"),
-"jump_down": SubResource("Animation_qmaga"),
-"jump_up": SubResource("Animation_r31lf"),
-"run": SubResource("Animation_p7t4y"),
-"runn": SubResource("Animation_4xeq0")
+&"RESET": SubResource("Animation_rglyt"),
+&"hurt": SubResource("Animation_33ilt"),
+&"idle": SubResource("Animation_ludxr"),
+&"jump_down": SubResource("Animation_qmaga"),
+&"jump_up": SubResource("Animation_r31lf"),
+&"run": SubResource("Animation_p7t4y"),
+&"runn": SubResource("Animation_4xeq0")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6stua"]

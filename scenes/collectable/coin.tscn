@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dxc4uvwsxj07l"]
 
 [ext_resource type="Texture2D" uid="uid://djo5xgrlowwsv" path="res://Assets/Art/items/Untitled_Artwork-ezgif.com-gif-to-sprite-converter.png" id="1_6tc8k"]
-[ext_resource type="Script" path="res://scenes/collectable/coin.gd" id="1_nqei0"]
+[ext_resource type="Script" uid="uid://da27eqobwandc" path="res://scenes/collectable/coin.gd" id="1_nqei0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_12fgp"]
 radius = 6.0
@@ -153,8 +153,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xeqek"]
 _data = {
-"RESET": SubResource("Animation_tuey8"),
-"coin_idle": SubResource("Animation_ebf1y")
+&"RESET": SubResource("Animation_tuey8"),
+&"coin_idle": SubResource("Animation_ebf1y")
 }
 
 [node name="Coin" type="Area2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6sgmtn28clna"]
 
-[ext_resource type="Script" path="res://scenes/entities/spikes.gd" id="1_f7ol2"]
+[ext_resource type="Script" uid="uid://c37mhvn2lio52" path="res://scenes/entities/spikes.gd" id="1_f7ol2"]
 [ext_resource type="Texture2D" uid="uid://djkondlu2nsm8" path="res://Assets/Art/Entities/Obstacles/terrain/Spikes.png" id="1_j4h2a"]
 
 [node name="Spikes" type="Node2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://kv38xdvpfvmk"]
 
-[ext_resource type="Script" path="res://scenes/ui/loading_screen.gd" id="1_muo1b"]
+[ext_resource type="Script" uid="uid://doxacfl5owp7a" path="res://scenes/ui/loading_screen.gd" id="1_muo1b"]
 
 [sub_resource type="Animation" id="Animation_d6fd6"]
 resource_name = "fade_from_black"
@@ -16,10 +16,10 @@ resource_name = "wipe_to_right"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gu3qp"]
 _data = {
-"fade_from_black": SubResource("Animation_d6fd6"),
-"fade_to_black": SubResource("Animation_relji"),
-"wipe_from_right": SubResource("Animation_ebw8u"),
-"wipe_to_right": SubResource("Animation_c4w6w")
+&"fade_from_black": SubResource("Animation_d6fd6"),
+&"fade_to_black": SubResource("Animation_relji"),
+&"wipe_from_right": SubResource("Animation_ebw8u"),
+&"wipe_to_right": SubResource("Animation_c4w6w")
 }
 
 [node name="Loading Screen" type="CanvasLayer"]

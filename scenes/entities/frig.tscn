@@ -43,7 +43,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vfkxp"]
 _data = {
-"idle": SubResource("Animation_yescy")
+&"idle": SubResource("Animation_yescy")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6uy8r"]

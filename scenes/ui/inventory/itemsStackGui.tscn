@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb34kg7oew2ws"]
 
 [ext_resource type="FontFile" uid="uid://bv2yue6oymbtp" path="res://Assets/fonts/Early GameBoy.ttf" id="1_0apbh"]
-[ext_resource type="Script" path="res://scenes/ui/inventory/itemsStackGui.gd" id="1_w7ki1"]
+[ext_resource type="Script" uid="uid://yyhpn2e4l42t" path="res://scenes/ui/inventory/itemsStackGui.gd" id="1_w7ki1"]
 
 [node name="Panel" type="Panel"]
 script = ExtResource("1_w7ki1")

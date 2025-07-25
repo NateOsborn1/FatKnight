@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cpmoan050s8tn" path="res://scenes/collectable/collectable.tscn" id="1_8v5x0"]
 [ext_resource type="Texture2D" uid="uid://bykeqdy7s2wdf" path="res://Assets/Art/items/Soul img.png" id="2_3c7t8"]
 [ext_resource type="Resource" uid="uid://bnh1hodrd2aa0" path="res://scenes/collectable/green_soul.tres" id="2_r8lei"]
-[ext_resource type="Script" path="res://scenes/collectable/green_soul.gd" id="2_yuvf1"]
+[ext_resource type="Script" uid="uid://w2qp6ey0738j" path="res://scenes/collectable/green_soul.gd" id="2_yuvf1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b2f63"]
 radius = 8.0

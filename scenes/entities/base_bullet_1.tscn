@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpqkrrblwu07f"]
 
-[ext_resource type="Script" path="res://scenes/entities/base_bullet_1.gd" id="1_8yegm"]
+[ext_resource type="Script" uid="uid://dxnxbv165r0rp" path="res://scenes/entities/base_bullet_1.gd" id="1_8yegm"]
 [ext_resource type="Texture2D" uid="uid://ru1n6dfebr00" path="res://Assets/Art/Entities/Obstacles/Bullet yellow.png" id="2_7dy3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtq8b"]

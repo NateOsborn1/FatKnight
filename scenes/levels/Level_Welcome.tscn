@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfothnem4knrp"]
 
 [ext_resource type="Theme" uid="uid://3mwqdmah8pd6" path="res://Assets/themes/default_theme.tres" id="1_4lgdo"]
-[ext_resource type="Script" path="res://scenes/StageDemo.gd" id="2_qb3wc"]
+[ext_resource type="Script" uid="uid://cl0cjl6k01lou" path="res://scenes/StageDemo.gd" id="2_qb3wc"]
 
 [sub_resource type="Animation" id="Animation_og0m3"]
 length = 0.001
@@ -135,8 +135,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6tr5"]
 _data = {
-"RESET": SubResource("Animation_og0m3"),
-"WelcomeLevel": SubResource("Animation_8ar2s")
+&"RESET": SubResource("Animation_og0m3"),
+&"WelcomeLevel": SubResource("Animation_8ar2s")
 }
 
 [node name="Level" type="Label"]
@@ -146,12 +146,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 416.0
-offset_top = 264.0
-offset_right = 736.0
-offset_bottom = 284.0
+offset_left = -160.0
+offset_top = -60.0
+offset_right = 160.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3.5, 3.5)
 pivot_offset = Vector2(160, 10)
 size_flags_horizontal = 4
 theme = ExtResource("1_4lgdo")
@@ -163,5 +164,5 @@ script = ExtResource("2_qb3wc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_o6tr5")
+&"": SubResource("AnimationLibrary_o6tr5")
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dva6v1io3f88a"]
 
 [ext_resource type="PackedScene" uid="uid://6sgmtn28clna" path="res://scenes/entities/spikes.tscn" id="1_8faet"]
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_lbwho"]
+[ext_resource type="Script" uid="uid://bihs3yb3bl8sd" path="res://scenes/world.gd" id="1_lbwho"]
 [ext_resource type="PackedScene" uid="uid://dcnui0152qp47" path="res://scenes/entities/nitefsm.tscn" id="2_tj0w0"]
 [ext_resource type="Theme" uid="uid://3mwqdmah8pd6" path="res://Assets/themes/default_theme.tres" id="4_1pa4y"]
 [ext_resource type="PackedScene" uid="uid://ccwa82a66cbxn" path="res://scenes/entities/infestedEnemy1.tscn" id="4_sbiqx"]
@@ -12,10 +12,10 @@
 [ext_resource type="TileSet" uid="uid://b60manxade175" path="res://scenes/levels/tilemaps/level_1_tilemap.tres" id="10_4euxc"]
 [ext_resource type="TileSet" uid="uid://c1k7yottthn1" path="res://scenes/levels/tilemaps/tilemap1_nocollision.tres" id="10_ukyxy"]
 [ext_resource type="PackedScene" uid="uid://duqkxsijpetq5" path="res://scenes/ui/inventory/hotbar.tscn" id="12_a0nem"]
-[ext_resource type="Script" path="res://scenes/ui/inventory/CanvasLayer.gd" id="12_j4v4b"]
+[ext_resource type="Script" uid="uid://c0bdidayxypp4" path="res://scenes/ui/inventory/CanvasLayer.gd" id="12_j4v4b"]
 [ext_resource type="PackedScene" uid="uid://sxf06q3iub5b" path="res://scenes/ui/inventory/inventory_gui.tscn" id="13_mpm37"]
-[ext_resource type="Script" path="res://scenes/deaths.gd" id="14_5h3ax"]
-[ext_resource type="Script" path="res://scenes/ui/Souls.gd" id="15_3thob"]
+[ext_resource type="Script" uid="uid://cl76gkbs0qtop" path="res://scenes/deaths.gd" id="14_5h3ax"]
+[ext_resource type="Script" uid="uid://dbm4ylprb6rpy" path="res://scenes/ui/Souls.gd" id="15_3thob"]
 
 [node name="level 2" type="Node2D"]
 script = ExtResource("1_lbwho")

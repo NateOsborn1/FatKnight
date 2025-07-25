@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dje0cuhhh6i2e"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_1x0yi"]
+[ext_resource type="Script" uid="uid://bihs3yb3bl8sd" path="res://scenes/world.gd" id="1_1x0yi"]
 [ext_resource type="PackedScene" uid="uid://6sgmtn28clna" path="res://scenes/entities/spikes.tscn" id="1_80mvn"]
 [ext_resource type="PackedScene" uid="uid://dcnui0152qp47" path="res://scenes/entities/nitefsm.tscn" id="2_2agxa"]
 [ext_resource type="Theme" uid="uid://3mwqdmah8pd6" path="res://Assets/themes/default_theme.tres" id="3_luo1u"]
@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://bu7gy5ir8vjy5" path="res://scenes/interactable/checkpoint.tscn" id="9_6r8pn"]
 [ext_resource type="TileSet" uid="uid://c1k7yottthn1" path="res://scenes/levels/tilemaps/tilemap1_nocollision.tres" id="9_jn4nu"]
 [ext_resource type="TileSet" uid="uid://pfpqbf4nrinl" path="res://scenes/levels/tilemaps/level_3_tilemap.tres" id="10_0mre7"]
-[ext_resource type="Script" path="res://scenes/ui/inventory/CanvasLayer.gd" id="12_1vdah"]
+[ext_resource type="Script" uid="uid://c0bdidayxypp4" path="res://scenes/ui/inventory/CanvasLayer.gd" id="12_1vdah"]
 [ext_resource type="PackedScene" uid="uid://cw44f02pmhruf" path="res://scenes/interactable/locked_door.tscn" id="12_d1rni"]
 [ext_resource type="PackedScene" uid="uid://sxf06q3iub5b" path="res://scenes/ui/inventory/inventory_gui.tscn" id="13_tolaq"]
 [ext_resource type="PackedScene" uid="uid://pseawiu5vpir" path="res://scenes/entities/base_enemy.tscn" id="14_vt11p"]
 [ext_resource type="PackedScene" uid="uid://3towsou7lqk8" path="res://scenes/entities/evil_robber.tscn" id="15_1vkj1"]
 [ext_resource type="PackedScene" uid="uid://duqkxsijpetq5" path="res://scenes/ui/inventory/hotbar.tscn" id="16_ho160"]
-[ext_resource type="Script" path="res://scenes/deaths.gd" id="18_74qjh"]
-[ext_resource type="Script" path="res://scenes/ui/Souls.gd" id="19_lcpqg"]
+[ext_resource type="Script" uid="uid://cl76gkbs0qtop" path="res://scenes/deaths.gd" id="18_74qjh"]
+[ext_resource type="Script" uid="uid://dbm4ylprb6rpy" path="res://scenes/ui/Souls.gd" id="19_lcpqg"]
 
 [node name="level 3" type="Node2D"]
 script = ExtResource("1_1x0yi")

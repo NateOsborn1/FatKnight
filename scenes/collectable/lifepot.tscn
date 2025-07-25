@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b525epyube588"]
 
-[ext_resource type="Script" path="res://collectable.gd" id="1_b4mqp"]
+[ext_resource type="Script" uid="uid://u72gc4v4epna" path="res://collectable.gd" id="1_b4mqp"]
 [ext_resource type="Resource" uid="uid://b2oohc3j5wtbo" path="res://scenes/ui/inventory/items/lifepot.tres" id="2_vq26y"]
 [ext_resource type="Texture2D" uid="uid://dqx4r5raf0vk5" path="res://Assets/Art/items/Lifepot1.png" id="3_awfqu"]
 

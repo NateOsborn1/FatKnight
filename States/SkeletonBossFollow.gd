@@ -23,4 +23,3 @@ func transition():
 				get_parent().change_state("SpawnMinion")
 			1:
 				get_parent().change_state("Teleport")
-

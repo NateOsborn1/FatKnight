@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0e8iqyefr1d5"]
 
-[ext_resource type="Script" path="res://scenes/interactable/door.gd" id="1_3ocvx"]
+[ext_resource type="Script" uid="uid://do8nt1nhfafel" path="res://scenes/interactable/door.gd" id="1_3ocvx"]
 [ext_resource type="Texture2D" uid="uid://idyw5qkkod1j" path="res://Assets/Art/Background/Industrial Tile Assets/Tilemap dungeon/frame_apngframe05.png" id="2_fh0on"]
 [ext_resource type="Texture2D" uid="uid://c3wfrbhqa2cef" path="res://Assets/Art/Background/Industrial Tile Assets/Tilemap dungeon/frame_apngframe02.png" id="3_jqn4e"]
 

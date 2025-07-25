@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://b7xj7qyv3w67o"]
 
-[ext_resource type="Script" path="res://scenes/entities/skeleton_boss_minion.gd" id="1_5nids"]
+[ext_resource type="Script" uid="uid://s54o8idakwwl" path="res://scenes/entities/skeleton_boss_minion.gd" id="1_5nids"]
 [ext_resource type="Texture2D" uid="uid://cgtjyuuemcjva" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonAppear.png" id="1_aeasf"]
 [ext_resource type="Texture2D" uid="uid://6xnkjcngvjov" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonDeath.png" id="2_s6d1w"]
-[ext_resource type="Script" path="res://scenes/entities/damage_handler.gd" id="2_xevvq"]
+[ext_resource type="Script" uid="uid://hqch2pbynonq" path="res://scenes/entities/damage_handler.gd" id="2_xevvq"]
 [ext_resource type="Texture2D" uid="uid://capb4re6wewm2" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonIdle.png" id="3_04kgr"]
 [ext_resource type="PackedScene" uid="uid://byiw0v1iii6tf" path="res://scenes/ui/floating_number.tscn" id="3_j18gs"]
 
@@ -249,9 +249,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfr4c"]
 _data = {
-"RESET": SubResource("Animation_f1jfy"),
-"effective": SubResource("Animation_ggr85"),
-"resistant": SubResource("Animation_bxkdu")
+&"RESET": SubResource("Animation_f1jfy"),
+&"effective": SubResource("Animation_ggr85"),
+&"resistant": SubResource("Animation_bxkdu")
 }
 
 [node name="SkeletonBossMinion" type="CharacterBody2D"]

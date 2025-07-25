@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://kixjq7wxbr5k"]
 
-[ext_resource type="Script" path="res://scenes/entities/enemy_cop.gd" id="1_n4qec"]
+[ext_resource type="Script" uid="uid://74gdtu4veu5t" path="res://scenes/entities/enemy_cop.gd" id="1_n4qec"]
 [ext_resource type="Texture2D" uid="uid://cuxym3ngmiu41" path="res://Assets/Art/Entities/npc/Crow.png" id="2_fbqkd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16ag2"]
@@ -123,8 +123,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vlhed"]
 _data = {
-"RESET": SubResource("Animation_nt3wp"),
-"idle": SubResource("Animation_ubmkv")
+&"RESET": SubResource("Animation_nt3wp"),
+&"idle": SubResource("Animation_ubmkv")
 }
 
 [node name="enemy_cop" type="Area2D"]

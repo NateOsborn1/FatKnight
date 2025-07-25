@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://b66m45jo16ao8"]
 
 [ext_resource type="Texture2D" uid="uid://ci6rfmawj6sn2" path="res://Assets/Art/Background/City animals/1 Dog/Attack.png" id="1_6gc0d"]
-[ext_resource type="Script" path="res://scenes/entities/enemy_dog.gd" id="1_ye7hr"]
+[ext_resource type="Script" uid="uid://c0khhvli644iu" path="res://scenes/entities/enemy_dog.gd" id="1_ye7hr"]
 [ext_resource type="Texture2D" uid="uid://c787cpfw2o7l6" path="res://Assets/Art/Background/City animals/1 Dog/Death.png" id="2_sj8pt"]
 [ext_resource type="Texture2D" uid="uid://cb554fb8w8xcy" path="res://Assets/Art/Background/City animals/1 Dog/Hurt.png" id="3_vrqs2"]
 [ext_resource type="Texture2D" uid="uid://brhbflxnlfrbu" path="res://Assets/Art/Background/City animals/1 Dog/Idle.png" id="4_68nau"]
@@ -319,11 +319,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lxks3"]
 _data = {
-"attack": SubResource("Animation_qea3j"),
-"death": SubResource("Animation_ejqvt"),
-"hurt": SubResource("Animation_ss3v4"),
-"idle": SubResource("Animation_kuk7c"),
-"walk": SubResource("Animation_get63")
+&"attack": SubResource("Animation_qea3j"),
+&"death": SubResource("Animation_ejqvt"),
+&"hurt": SubResource("Animation_ss3v4"),
+&"idle": SubResource("Animation_kuk7c"),
+&"walk": SubResource("Animation_get63")
 }
 
 [node name="enemy_dog" type="CharacterBody2D"]

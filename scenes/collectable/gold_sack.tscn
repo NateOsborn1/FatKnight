@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dx8mdhc7onqxy"]
 
-[ext_resource type="Script" path="res://collectable.gd" id="1_w30n4"]
+[ext_resource type="Script" uid="uid://u72gc4v4epna" path="res://collectable.gd" id="1_w30n4"]
 [ext_resource type="Resource" uid="uid://ds20hygolsuc4" path="res://scenes/ui/inventory/items/goldsack.tres" id="2_d1p7l"]
 [ext_resource type="Texture2D" uid="uid://biv6sh4ey1wwc" path="res://Assets/Art/items/GoldSack.png" id="3_3yir2"]
 

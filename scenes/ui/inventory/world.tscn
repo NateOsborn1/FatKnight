@@ -1,10 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://bixlr8tfi1mwm"]
 
-[ext_resource type="Script" path="res://scenes/ui/inventory/world.gd" id="1_jv3hf"]
-[ext_resource type="Script" path="res://scenes/ui/inventory/CanvasLayer.gd" id="1_pjsef"]
+[ext_resource type="Script" uid="uid://ctx6dgwyid7jn" path="res://scenes/ui/inventory/world.gd" id="1_jv3hf"]
+[ext_resource type="Script" uid="uid://c0bdidayxypp4" path="res://scenes/ui/inventory/CanvasLayer.gd" id="1_pjsef"]
 [ext_resource type="PackedScene" uid="uid://sxf06q3iub5b" path="res://scenes/ui/inventory/inventory_gui.tscn" id="1_s8dkq"]
 
 [node name="World" type="Node2D"]
+editor_description = "World for the positioning of the Inventory. Look for World.tscn instead.
+"
 script = ExtResource("1_jv3hf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

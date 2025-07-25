@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dobmoimjkovbs"]
 
-[ext_resource type="Script" path="res://flipenemy.gd" id="1_hf68n"]
+[ext_resource type="Script" uid="uid://c0cdghm6xam45" path="res://flipenemy.gd" id="1_hf68n"]
 [ext_resource type="Texture2D" uid="uid://cuxym3ngmiu41" path="res://Assets/Art/Entities/npc/Crow.png" id="2_v16t7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16ag2"]
@@ -123,8 +123,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vlhed"]
 _data = {
-"Crow_idle": SubResource("Animation_ubmkv"),
-"RESET": SubResource("Animation_nt3wp")
+&"Crow_idle": SubResource("Animation_ubmkv"),
+&"RESET": SubResource("Animation_nt3wp")
 }
 
 [node name="flipenemy" type="Area2D"]

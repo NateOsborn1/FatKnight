@@ -176,9 +176,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xogo6"]
 _data = {
-"RESET": SubResource("Animation_b8hk2"),
-"crit": SubResource("Animation_mr4pm"),
-"normal": SubResource("Animation_lj1d4")
+&"RESET": SubResource("Animation_b8hk2"),
+&"crit": SubResource("Animation_mr4pm"),
+&"normal": SubResource("Animation_lj1d4")
 }
 
 [node name="FloatingNumber" type="Marker2D"]

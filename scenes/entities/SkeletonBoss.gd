@@ -154,8 +154,3 @@ func _physics_process(delta):
 			##progress_bar.visible = false
 			##find_child("FiniteStateMachine1").change_state("Death")
 			###queue_free()
-
-
-
-
-

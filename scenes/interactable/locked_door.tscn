@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw44f02pmhruf"]
 
-[ext_resource type="Script" path="res://scenes/interactable/locked_door.gd" id="1_1gi5y"]
+[ext_resource type="Script" uid="uid://brm2xt0sxnsdr" path="res://scenes/interactable/locked_door.gd" id="1_1gi5y"]
 [ext_resource type="Texture2D" uid="uid://uexct4mosylp" path="res://Assets/Art/Background/Industrial Tile Assets/Tilemap dungeon/frame_apngframe24.png" id="1_p12mp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1g5y"]
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qu2wu"]
 _data = {
-"Locked": SubResource("Animation_d74ph"),
-"Unlocked": SubResource("Animation_4xeeg")
+&"Locked": SubResource("Animation_d74ph"),
+&"Unlocked": SubResource("Animation_4xeeg")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xv8dc"]

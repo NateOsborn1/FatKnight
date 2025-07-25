@@ -1,13 +1,13 @@
 [gd_scene load_steps=87 format=3 uid="uid://dx1tyvmkyvyym"]
 
-[ext_resource type="Script" path="res://scenes/entities/nite.gd" id="1_6wnk3"]
+[ext_resource type="Script" uid="uid://m3ca8s1i0kfh" path="res://scenes/entities/nite.gd" id="1_6wnk3"]
 [ext_resource type="Resource" uid="uid://puu17t655w52" path="res://scenes/ui/inventory/items/playerInventory.tres" id="2_rfw80"]
 [ext_resource type="Texture2D" uid="uid://dsapy0udmdtru" path="res://Assets/Art/Entities/Robber/crow/crow/Jump_Crow_2.png" id="3_njpxm"]
 [ext_resource type="Texture2D" uid="uid://c21wrnxvaxfqi" path="res://Assets/Art/Entities/Robber/crow/crow/Hop_Crow2.png" id="4_cnttn"]
 [ext_resource type="Texture2D" uid="uid://c3ylf7xhssdx7" path="res://Assets/Art/Entities/Fatnite/Idle_Flat1-ezgif.com-gif-to-sprite-converter.png" id="5_2ru8l"]
 [ext_resource type="Texture2D" uid="uid://bgdruabvedtbg" path="res://Assets/Art/Entities/Fatnite/Punch_Flat_fx-ezgif.com-gif-to-sprite-converter.png" id="6_ffl5v"]
 [ext_resource type="Texture2D" uid="uid://mc5rct68hre2" path="res://Assets/Art/Entities/Fatnite/Walk_Flat1-ezgif.com-gif-to-sprite-converter.png" id="7_dechs"]
-[ext_resource type="Script" path="res://scenes/entities/Interactor_area.gd" id="8_vgf7e"]
+[ext_resource type="Script" uid="uid://vogb71t4pdnn" path="res://scenes/entities/Interactor_area.gd" id="8_vgf7e"]
 [ext_resource type="PackedScene" uid="uid://cw5f0t6ygifhr" path="res://scenes/entities/frig_weapon.tscn" id="9_cdsft"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6stua"]
@@ -439,16 +439,16 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0rqn0"]
 _data = {
-"Frig_slash": SubResource("Animation_x0e0s"),
-"RESET": SubResource("Animation_rpqv6"),
-"glide": SubResource("Animation_evlll"),
-"hop": SubResource("Animation_jla4m"),
-"idle": SubResource("Animation_pu8t7"),
-"idle_flat": SubResource("Animation_52sbn"),
-"jump_down": SubResource("Animation_er8ke"),
-"jump_up": SubResource("Animation_juamk"),
-"punch_flat": SubResource("Animation_vipq6"),
-"walk_flat": SubResource("Animation_vu2bo")
+&"Frig_slash": SubResource("Animation_x0e0s"),
+&"RESET": SubResource("Animation_rpqv6"),
+&"glide": SubResource("Animation_evlll"),
+&"hop": SubResource("Animation_jla4m"),
+&"idle": SubResource("Animation_pu8t7"),
+&"idle_flat": SubResource("Animation_52sbn"),
+&"jump_down": SubResource("Animation_er8ke"),
+&"jump_up": SubResource("Animation_juamk"),
+&"punch_flat": SubResource("Animation_vipq6"),
+&"walk_flat": SubResource("Animation_vu2bo")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5j3t"]

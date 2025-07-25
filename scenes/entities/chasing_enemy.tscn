@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmgvgpk0mlioi"]
 
-[ext_resource type="Script" path="res://scenes/entities/chasing_enemy.gd" id="1_h415t"]
+[ext_resource type="Script" uid="uid://qiqlm0n4atxm" path="res://scenes/entities/chasing_enemy.gd" id="1_h415t"]
 [ext_resource type="Texture2D" uid="uid://bmkbl4kljkvnw" path="res://Assets/Art/Entities/npc/Npc 1 spritesheet.png" id="1_m65xm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpcpi"]

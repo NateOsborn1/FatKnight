@@ -1,8 +1,8 @@
-[gd_scene load_steps=120 format=3 uid="uid://d4f0dcrvqfy3x"]
+[gd_scene load_steps=119 format=3 uid="uid://d4f0dcrvqfy3x"]
 
-[ext_resource type="Script" path="res://scenes/entities/SkeletonBoss.gd" id="1_fyvij"]
+[ext_resource type="Script" uid="uid://bobkngg62jgen" path="res://scenes/entities/SkeletonBoss.gd" id="1_fyvij"]
 [ext_resource type="Texture2D" uid="uid://capb4re6wewm2" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonIdle.png" id="1_t13ww"]
-[ext_resource type="Script" path="res://scenes/entities/SB_boss_damage_handler.gd" id="2_lbxrd"]
+[ext_resource type="Script" uid="uid://bon1y40js0vl8" path="res://scenes/entities/SB_boss_damage_handler.gd" id="2_lbxrd"]
 [ext_resource type="Texture2D" uid="uid://b2es7x65xppxu" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/attacking.png" id="2_n6ypi"]
 [ext_resource type="Texture2D" uid="uid://dsyp5ulto0g5l" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/death.png" id="3_6vxl1"]
 [ext_resource type="PackedScene" uid="uid://byiw0v1iii6tf" path="res://scenes/ui/floating_number.tscn" id="3_pai8o"]
@@ -13,16 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://cgtjyuuemcjva" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonAppear.png" id="8_nejo7"]
 [ext_resource type="Texture2D" uid="uid://6xnkjcngvjov" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonDeath.png" id="9_mnlk7"]
 [ext_resource type="FontFile" uid="uid://bv2yue6oymbtp" path="res://Assets/fonts/Early GameBoy.ttf" id="10_m86jp"]
-[ext_resource type="Script" path="res://States/FiniteStateMachine1.gd" id="11_d7cub"]
-[ext_resource type="Script" path="res://States/SkeletonBossIdle.gd" id="13_h2lcw"]
-[ext_resource type="Script" path="res://States/SkeletonBossFollow.gd" id="14_2ssgi"]
-[ext_resource type="Script" path="res://States/SkeletonBossAttack.gd" id="15_61w8x"]
-[ext_resource type="Script" path="res://States/SkeletonBossTeleport.gd" id="16_rkkn7"]
-[ext_resource type="Script" path="res://States/SkeletonBossSpawnMinion.gd" id="17_tvkef"]
+[ext_resource type="Script" uid="uid://bx2a2payttbfr" path="res://States/FiniteStateMachine1.gd" id="11_d7cub"]
+[ext_resource type="Script" uid="uid://boi8frlt2ndp4" path="res://States/SkeletonBossIdle.gd" id="13_h2lcw"]
+[ext_resource type="Script" uid="uid://swx5vyn83w1" path="res://States/SkeletonBossFollow.gd" id="14_2ssgi"]
+[ext_resource type="Script" uid="uid://djfier682knvd" path="res://States/SkeletonBossAttack.gd" id="15_61w8x"]
+[ext_resource type="Script" uid="uid://b1xbxhtkpr0bv" path="res://States/SkeletonBossTeleport.gd" id="16_rkkn7"]
+[ext_resource type="Script" uid="uid://bd1gusudhpvk4" path="res://States/SkeletonBossSpawnMinion.gd" id="17_tvkef"]
 [ext_resource type="PackedScene" uid="uid://b7xj7qyv3w67o" path="res://scenes/entities/skeleton_boss_minion.tscn" id="18_04das"]
-[ext_resource type="Script" path="res://States/SkeletonBossDeath.gd" id="19_gw2s3"]
+[ext_resource type="Script" uid="uid://c75qkxlyfrxdc" path="res://States/SkeletonBossDeath.gd" id="19_gw2s3"]
 [ext_resource type="PackedScene" uid="uid://lt1i51phq4rh" path="res://scenes/entities/slash.tscn" id="22_xu4q2"]
-[ext_resource type="Script" path="res://scenes/entities/slash.gd" id="23_wsdap"]
+[ext_resource type="Script" uid="uid://depe3fl6urwsy" path="res://scenes/entities/slash.gd" id="23_wsdap"]
 
 [sub_resource type="Animation" id="Animation_05cxk"]
 resource_name = "Boss Slain"
@@ -91,6 +91,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(23.271, -2.73142)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("../AnimatedSprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("../AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Weapons/Slash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_wsqxd"]
@@ -170,7 +206,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(23.271, -2.73142)]
+"values": [Vector2(10, -2.731)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -184,33 +220,17 @@ tracks/4/keys = {
 "update": 0,
 "values": [-1.01229, 1.30725, 1.74533, 0.349066]
 }
-
-[sub_resource type="Animation" id="Animation_f6cw6"]
-resource_name = "attack_2"
-length = 1.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Weapons/Slash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.3, 0.933333, 1.1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["attacking"]
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_vic5g"]
@@ -363,6 +383,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_i66ww"]
+length = 1.5
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -370,10 +392,10 @@ tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 1, 2, 3, 2, 4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -455,25 +477,99 @@ tracks/1/keys = {
 "values": ["summonDeath"]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1ale"]
-_data = {
-"Boss Slain": SubResource("Animation_05cxk"),
-"RESET": SubResource("Animation_ia4pa"),
-"SummonIdle": SubResource("Animation_wsqxd"),
-"attack_1": SubResource("Animation_bt8xf"),
-"attack_2": SubResource("Animation_f6cw6"),
-"death": SubResource("Animation_vic5g"),
-"effective": SubResource("Animation_tnq7d"),
-"idle": SubResource("Animation_8h7bg"),
-"idle2": SubResource("Animation_0ljba"),
-"resistant": SubResource("Animation_7wmc6"),
-"skill1": SubResource("Animation_wckoq"),
-"summon": SubResource("Animation_i66ww"),
-"summonAppear": SubResource("Animation_n4eut"),
-"summonDeath": SubResource("Animation_uot71")
+[sub_resource type="Animation" id="Animation_hioag"]
+resource_name = "attack_2"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attacking"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Weapons/Slash:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.2001, 0.3, 0.4, 0.5, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false, false, false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Weapons/Slash:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -2.731)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Weapons:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.01229, 1.30725, 1.74533, 0.349066]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Weapons/Slash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.3, 0.933333, 1.1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_chh1g"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1ale"]
+_data = {
+&"Boss Slain": SubResource("Animation_05cxk"),
+&"RESET": SubResource("Animation_ia4pa"),
+&"SummonIdle": SubResource("Animation_wsqxd"),
+&"attack_1": SubResource("Animation_bt8xf"),
+&"attack_2": SubResource("Animation_hioag"),
+&"death": SubResource("Animation_vic5g"),
+&"effective": SubResource("Animation_tnq7d"),
+&"idle": SubResource("Animation_8h7bg"),
+&"idle2": SubResource("Animation_0ljba"),
+&"resistant": SubResource("Animation_7wmc6"),
+&"skill1": SubResource("Animation_wckoq"),
+&"summon": SubResource("Animation_i66ww"),
+&"summonAppear": SubResource("Animation_n4eut"),
+&"summonDeath": SubResource("Animation_uot71")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvgkm"]
 atlas = ExtResource("1_t13ww")
@@ -1083,24 +1179,17 @@ floating_number = ExtResource("3_pai8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../Sprite2D")
-libraries = {
-"": SubResource("AnimationLibrary_k1ale")
-}
-tree_root = SubResource("AnimationNodeStateMachine_chh1g")
-anim_player = NodePath("../AnimationPlayer")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_k1ale")
+&"": SubResource("AnimationLibrary_k1ale")
 }
 autoplay = "idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i2tfl")
-animation = &"attacking"
+animation = &"idle"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w7cf4")

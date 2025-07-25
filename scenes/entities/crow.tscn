@@ -1,6 +1,6 @@
 [gd_scene load_steps=78 format=3 uid="uid://c73vvi88q4ndq"]
 
-[ext_resource type="Script" path="res://scenes/entities/crow.gd" id="1_fy2db"]
+[ext_resource type="Script" uid="uid://d0wkte4isqaft" path="res://scenes/entities/crow.gd" id="1_fy2db"]
 [ext_resource type="Texture2D" uid="uid://c21wrnxvaxfqi" path="res://Assets/Art/Entities/Robber/crow/crow/Hop_Crow2.png" id="3_e63io"]
 [ext_resource type="Texture2D" uid="uid://dsapy0udmdtru" path="res://Assets/Art/Entities/Robber/crow/crow/Jump_Crow_2.png" id="4_jbtah"]
 [ext_resource type="Texture2D" uid="uid://coj7ve2dy6e8m" path="res://Assets/Art/Entities/Fatnite/Idle_Flat.png" id="4_pqifo"]
@@ -237,14 +237,14 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0rqn0"]
 _data = {
-"glide": SubResource("Animation_evlll"),
-"hop": SubResource("Animation_jla4m"),
-"idle": SubResource("Animation_pu8t7"),
-"idle_flat": SubResource("Animation_52sbn"),
-"jump_down": SubResource("Animation_er8ke"),
-"jump_up": SubResource("Animation_juamk"),
-"punch_flat": SubResource("Animation_vipq6"),
-"walk_flat": SubResource("Animation_vu2bo")
+&"glide": SubResource("Animation_evlll"),
+&"hop": SubResource("Animation_jla4m"),
+&"idle": SubResource("Animation_pu8t7"),
+&"idle_flat": SubResource("Animation_52sbn"),
+&"jump_down": SubResource("Animation_er8ke"),
+&"jump_up": SubResource("Animation_juamk"),
+&"punch_flat": SubResource("Animation_vipq6"),
+&"walk_flat": SubResource("Animation_vu2bo")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5j3t"]

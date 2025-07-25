@@ -1,6 +1,6 @@
 [gd_scene load_steps=114 format=3 uid="uid://d4f0dcrvqfy3x"]
 
-[ext_resource type="Script" path="res://scenes/entities/SkeletonBoss.gd" id="1_fyvij"]
+[ext_resource type="Script" uid="uid://bobkngg62jgen" path="res://scenes/entities/SkeletonBoss.gd" id="1_fyvij"]
 [ext_resource type="Texture2D" uid="uid://capb4re6wewm2" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonIdle.png" id="1_t13ww"]
 [ext_resource type="Texture2D" uid="uid://b2es7x65xppxu" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/attacking.png" id="2_n6ypi"]
 [ext_resource type="Texture2D" uid="uid://dsyp5ulto0g5l" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/death.png" id="3_6vxl1"]
@@ -11,14 +11,59 @@
 [ext_resource type="Texture2D" uid="uid://cgtjyuuemcjva" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonAppear.png" id="8_nejo7"]
 [ext_resource type="Texture2D" uid="uid://6xnkjcngvjov" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonDeath.png" id="9_mnlk7"]
 [ext_resource type="FontFile" uid="uid://bv2yue6oymbtp" path="res://Assets/fonts/Early GameBoy.ttf" id="10_m86jp"]
-[ext_resource type="Script" path="res://States/FiniteStateMachine1.gd" id="11_d7cub"]
-[ext_resource type="Script" path="res://States/SkeletonBossIdle.gd" id="13_h2lcw"]
-[ext_resource type="Script" path="res://States/SkeletonBossFollow.gd" id="14_2ssgi"]
-[ext_resource type="Script" path="res://States/SkeletonBossAttack.gd" id="15_61w8x"]
-[ext_resource type="Script" path="res://States/SkeletonBossTeleport.gd" id="16_rkkn7"]
-[ext_resource type="Script" path="res://States/SkeletonBossSpawnMinion.gd" id="17_tvkef"]
+[ext_resource type="Script" uid="uid://bx2a2payttbfr" path="res://States/FiniteStateMachine1.gd" id="11_d7cub"]
+[ext_resource type="Script" uid="uid://boi8frlt2ndp4" path="res://States/SkeletonBossIdle.gd" id="13_h2lcw"]
+[ext_resource type="Script" uid="uid://swx5vyn83w1" path="res://States/SkeletonBossFollow.gd" id="14_2ssgi"]
+[ext_resource type="Script" uid="uid://djfier682knvd" path="res://States/SkeletonBossAttack.gd" id="15_61w8x"]
+[ext_resource type="Script" uid="uid://b1xbxhtkpr0bv" path="res://States/SkeletonBossTeleport.gd" id="16_rkkn7"]
+[ext_resource type="Script" uid="uid://bd1gusudhpvk4" path="res://States/SkeletonBossSpawnMinion.gd" id="17_tvkef"]
 [ext_resource type="PackedScene" uid="uid://b7xj7qyv3w67o" path="res://scenes/entities/skeleton_boss_minion.tscn" id="18_04das"]
-[ext_resource type="Script" path="res://States/SkeletonBossDeath.gd" id="19_gw2s3"]
+[ext_resource type="Script" uid="uid://c75qkxlyfrxdc" path="res://States/SkeletonBossDeath.gd" id="19_gw2s3"]
+
+[sub_resource type="Animation" id="Animation_05cxk"]
+resource_name = "Boss Slain"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../UI/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ia4pa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../UI/Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wsqxd"]
 length = 0.8
@@ -46,6 +91,62 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["SummonIdle"]
+}
+
+[sub_resource type="Animation" id="Animation_bt8xf"]
+resource_name = "attack_1"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attacking"]
+}
+
+[sub_resource type="Animation" id="Animation_f6cw6"]
+resource_name = "attack_2"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attacking"]
 }
 
 [sub_resource type="Animation" id="Animation_vic5g"]
@@ -280,121 +381,20 @@ tracks/1/keys = {
 "values": ["summonDeath"]
 }
 
-[sub_resource type="Animation" id="Animation_05cxk"]
-resource_name = "Boss Slain"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../UI/Label:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_ia4pa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../UI/Label:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bt8xf"]
-resource_name = "attack_1"
-length = 1.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["attacking"]
-}
-
-[sub_resource type="Animation" id="Animation_f6cw6"]
-resource_name = "attack_2"
-length = 1.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["attacking"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k1ale"]
 _data = {
-"Boss Slain": SubResource("Animation_05cxk"),
-"RESET": SubResource("Animation_ia4pa"),
-"SummonIdle": SubResource("Animation_wsqxd"),
-"attack_1": SubResource("Animation_bt8xf"),
-"attack_2": SubResource("Animation_f6cw6"),
-"death": SubResource("Animation_vic5g"),
-"idle": SubResource("Animation_8h7bg"),
-"idle2": SubResource("Animation_0ljba"),
-"skill1": SubResource("Animation_wckoq"),
-"summon": SubResource("Animation_i66ww"),
-"summonAppear": SubResource("Animation_n4eut"),
-"summonDeath": SubResource("Animation_uot71")
+&"Boss Slain": SubResource("Animation_05cxk"),
+&"RESET": SubResource("Animation_ia4pa"),
+&"SummonIdle": SubResource("Animation_wsqxd"),
+&"attack_1": SubResource("Animation_bt8xf"),
+&"attack_2": SubResource("Animation_f6cw6"),
+&"death": SubResource("Animation_vic5g"),
+&"idle": SubResource("Animation_8h7bg"),
+&"idle2": SubResource("Animation_0ljba"),
+&"skill1": SubResource("Animation_wckoq"),
+&"summon": SubResource("Animation_i66ww"),
+&"summonAppear": SubResource("Animation_n4eut"),
+&"summonDeath": SubResource("Animation_uot71")
 }
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_chh1g"]

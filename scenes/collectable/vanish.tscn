@@ -89,7 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hlvuh"]
 _data = {
-"sparkle": SubResource("Animation_yjjeq")
+&"sparkle": SubResource("Animation_yjjeq")
 }
 
 [node name="Vanish" type="Node2D"]
