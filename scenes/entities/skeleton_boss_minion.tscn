@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7xj7qyv3w67o"]
+[gd_scene load_steps=31 format=3 uid="uid://b7xj7qyv3w67o"]
 
 [ext_resource type="Script" uid="uid://s54o8idakwwl" path="res://scenes/entities/skeleton_boss_minion.gd" id="1_5nids"]
 [ext_resource type="Texture2D" uid="uid://cgtjyuuemcjva" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonAppear.png" id="1_aeasf"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://hqch2pbynonq" path="res://scenes/entities/damage_handler.gd" id="2_xevvq"]
 [ext_resource type="Texture2D" uid="uid://capb4re6wewm2" path="res://Assets/Art/Entities/Boss/Undead executioner puppet/summonIdle.png" id="3_04kgr"]
 [ext_resource type="PackedScene" uid="uid://byiw0v1iii6tf" path="res://scenes/ui/floating_number.tscn" id="3_j18gs"]
+[ext_resource type="PackedScene" uid="uid://lt1i51phq4rh" path="res://scenes/entities/slash.tscn" id="7_3y0q1"]
+[ext_resource type="Script" uid="uid://depe3fl6urwsy" path="res://scenes/entities/slash.gd" id="8_l1jcd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glifn"]
 atlas = ExtResource("1_aeasf")
@@ -274,6 +276,7 @@ position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_wixaw")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 0, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -288,11 +291,19 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(36, 11.5)
-text = "Effective"
+text = "Resistant"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xfr4c")
+&"": SubResource("AnimationLibrary_xfr4c")
 }
+
+[node name="Weapons" type="Node2D" parent="."]
+position = Vector2(-13, -2)
+scale = Vector2(1.3, 0.7)
+
+[node name="Slash" parent="Weapons" instance=ExtResource("7_3y0q1")]
+script = ExtResource("8_l1jcd")
+damage_type = 2

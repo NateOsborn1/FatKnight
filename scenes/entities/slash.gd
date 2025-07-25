@@ -12,4 +12,3 @@ func _on_body_entered(body):
 	if damage_handler:
 		damage_handler.effective_damage(damage_type, ATK)
 		
-

@@ -1188,8 +1188,7 @@ autoplay = "idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i2tfl")
-animation = &"idle"
-frame = 1
+animation = &"summonDeath"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_w7cf4")
