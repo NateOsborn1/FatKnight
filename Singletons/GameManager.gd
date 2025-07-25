@@ -37,4 +37,3 @@ func kill_player():
 	#player.soul_progress_bar.value = soul_count
 	#print(current_health)
 	respawn_player()
-

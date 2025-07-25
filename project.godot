@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scenes/ui/GameManager.gd"
+GameManager="*res://Singletons/GameManager.gd"
+MomentumManager="*res://Singletons/MomentumManager.gd"
 
 [debug]
 
